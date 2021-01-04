@@ -1,10 +1,13 @@
 import React from "react";
 
+//import pages
+import AboutUs from "./pages/AboutUs";
+
 const App = () => {
     return (
-        <div>
-            <h1>Film</h1>
-        </div>
+        <>
+            <AboutUs />
+        </>
     );
 };
 
