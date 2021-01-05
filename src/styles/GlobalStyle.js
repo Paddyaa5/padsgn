@@ -41,7 +41,9 @@ const GlobalStyle = createGlobalStyle`
         color: #1EA896;
     }
     h4{
+        color: #1EA896;
         font-weight: 900;
+        font-size: 2rem;
     }
     span{
         font-weight: 900;

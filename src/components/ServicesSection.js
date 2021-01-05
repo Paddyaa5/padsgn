@@ -8,9 +8,32 @@ import { Layout, StyledImage } from "../styles/Styles";
 const Styled = styled(Layout)`
     .description {
         padding-left: 5rem;
-    }
-    i {
-        color: white;
+        h2 {
+            text-align: center;
+            padding-bottom: 5rem;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card {
+                flex-basis: 19rem;
+                .icon {
+                    display: flex;
+                    i {
+                        color: white;
+                        font-size: 2rem;
+                    }
+                    h3 {
+                        padding-left: 1rem;
+                    }
+                }
+                p {
+                    width: 100%;
+                    padding: 2rem 0 4rem 0;
+                }
+            }
+        }
     }
 `;
 
@@ -47,8 +70,8 @@ const ServicesSection = () => {
                 <h2>
                     High <span>Quality</span> Services
                 </h2>
-                {Services.map((Service) => (
-                    <div className="cards">
+                <div className="cards">
+                    {Services.map((Service) => (
                         <div className="card">
                             <div className="icon">
                                 {Service.icon}
@@ -56,8 +79,8 @@ const ServicesSection = () => {
                             </div>
                             <p>{Service.text}</p>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </Styled>
     );
