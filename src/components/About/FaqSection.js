@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Layout } from "../styles/Styles";
+import { Layout } from "../../styles/Styles";
 
 const Questions = [
     {

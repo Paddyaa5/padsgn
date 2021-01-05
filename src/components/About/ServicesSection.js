@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 //import images
-import DoMore from "../images/DoMore.jpg";
+import DoMore from "../../images/DoMore.jpg";
 //import styles
-import { Layout, StyledImage } from "../styles/Styles";
+import { Layout, StyledImage } from "../../styles/Styles";
 
 const Styled = styled(Layout)`
     .description {
         padding-left: 5rem;
+        display: flex;
+        flex-direction: column;
         h2 {
             text-align: center;
             padding-bottom: 5rem;
@@ -33,6 +35,9 @@ const Styled = styled(Layout)`
                     padding: 2rem 0 4rem 0;
                 }
             }
+        }
+        button {
+            align-self: center;
         }
     }
 `;
@@ -81,6 +86,7 @@ const ServicesSection = () => {
                         </div>
                     ))}
                 </div>
+                <button>See Projects</button>
             </div>
         </Styled>
     );

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 //import images
-import AboutImage from "../images/AimHigh.jpg";
+import AboutImage from "../../images/AimHigh.jpg";
 //import styles
-import { Layout, StyledImage, Hide } from "../styles/Styles";
+import { Layout, StyledImage, Hide } from "../../styles/Styles";
 
 const Styled = styled(Layout)`
     .description {

@@ -8,7 +8,7 @@ export const StyledImage = styled.div`
         height: 80vh;
         max-height: 50rem;
         object-fit: cover;
-        border: 1px solid white;
+        border: 1px solid ${(props) => props.theme.color1};
     }
 `;
 export const Layout = styled.div`

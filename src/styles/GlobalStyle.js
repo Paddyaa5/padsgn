@@ -8,51 +8,55 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background: #202030;
-        font-family: 'Raleway', sans-serif;
+        background: ${(props) => props.theme.color2};
+        font-family: ${(props) => props.theme.font1};
     }
 
     button{
         font-weight: 900;
         text-transform: uppercase;
-        font-size: 1.1.rem;
+        font-size: 0.9rem;
         cursor: pointer;
         padding: 1rem 2.5rem;
-        border: 2px solid #1EA896;
+        border: 2px solid ${(props) => props.theme.color3};
         letter-spacing: 1.5px;
         border-radius: 2px;
-        color: #F1F9F2;
-        background-color: #202030;
+        color: ${(props) => props.theme.color1};
+        background-color: ${(props) => props.theme.color2};
         transition: all 5 ease;
-        font-family: 'Raleway', sans-serif;
+        font-family: ${(props) => props.theme.font1};
+        outline: none;
         &:hover{
-            background-color: #1EA896;
-            color: #202030;
+            background-color: ${(props) => props.theme.color3};
+            color: ${(props) => props.theme.color2};
             transition: all 5 ease;
         }
     }
 
     h2{
         font-weight: 200;
-        font-size: 4rem;
-        color: #E0F2E9;
+        font-size: calc(2vw + 1rem);
+        color: ${(props) => props.theme.color1};
     }
     h3{
-        color: #1EA896;
+        color: ${(props) => props.theme.color3};
     }
     h4{
-        color: #1EA896;
+        color: ${(props) => props.theme.color3};
         font-weight: 900;
         font-size: 2rem;
     }
     span{
         font-weight: 900;
-        color: #1EA896;
+        color: ${(props) => props.theme.color3};
     }
     p{
         padding: 3rem 0rem;
-        color: #E0F2E9;
-        font-size: 1rem;
+        color: ${(props) => props.theme.color1};
+        font-size: calc(0.5vw + 0.5rem);
+    }
+    a {
+        text-decoration: none;
     }
 `;
 
