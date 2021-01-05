@@ -1,55 +1,65 @@
 import React from "react";
-
-//import icons
-import { FaGem } from "react-icons/fa";
-import { FaPiggyBank } from "react-icons/fa";
-import { FaPaintBrush } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
+import styled from "styled-components";
 //import images
 import DoMore from "../images/DoMore.jpg";
+//import styles
+import { Layout, StyledImage } from "../styles/Styles";
+
+const Styled = styled(Layout)`
+    .description {
+        padding-left: 5rem;
+    }
+    i {
+        color: white;
+    }
+`;
+
+const Services = [
+    {
+        icon: <i className="fas fa-gem"></i>,
+        title: "Something Special",
+        text: "Lorem ipsum dolor sit amet.",
+    },
+    {
+        icon: <i className="fas fa-piggy-bank"></i>,
+        title: "Cheaper Than Agencies",
+        text: "Lorem ipsum dolor sit amet.",
+    },
+    {
+        icon: <i className="fas fa-eye"></i>,
+        title: "Eye Catching Design",
+        text: "Lorem ipsum dolor sit amet.",
+    },
+    {
+        icon: <i className="fas fa-chart-line"></i>,
+        title: "Help you business grow",
+        text: "Lorem ipsum dolor sit amet.",
+    },
+];
 
 const ServicesSection = () => {
     return (
-        <div className="services">
+        <Styled>
+            <StyledImage>
+                <img src={DoMore} alt="do-more" className="image" />
+            </StyledImage>
             <div className="description">
                 <h2>
                     High <span>Quality</span> Services
                 </h2>
-                <div className="cards">
-                    <div className="card">
-                        <div className="icon">
-                            <FaGem />
-                            <h3>Amazing Design</h3>
+                {Services.map((Service) => (
+                    <div className="cards">
+                        <div className="card">
+                            <div className="icon">
+                                {Service.icon}
+                                <h3>{Service.title}</h3>
+                            </div>
+                            <p>{Service.text}</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet.</p>
                     </div>
-                    <div className="card">
-                        <div className="icon">
-                            <FaPiggyBank />
-                            <h3>Cheaper Than Agencies</h3>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div className="card">
-                        <div className="icon">
-                            <FaPaintBrush />
-                            <h3>Amazing Design</h3>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div className="card">
-                        <div className="icon">
-                            <FaReact />
-                            <h3>Amazing Design</h3>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
+                ))}
             </div>
-            <div className="image-container">
-                <img src={DoMore} alt="do-more" className="image" />
-            </div>
-        </div>
+        </Styled>
     );
 };
 
