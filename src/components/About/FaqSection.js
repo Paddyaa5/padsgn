@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Layout } from "../../styles/Styles";
+import Toggle from "./Toggle";
+import { AnimateSharedLayout } from "framer-motion";
 
 const Questions = [
     {
@@ -39,7 +41,6 @@ const Styled = styled(Layout)`
         width: 100%;
     }
     .question {
-        padding: 3rem 0;
         cursor: pointer;
         .answer {
             padding: 2rem 0;
@@ -56,18 +57,16 @@ const FaqSection = () => {
             <h2>
                 Any Questions <span>FAQ</span>
             </h2>
-            {Questions.map((Question) => (
-                <>
-                    <div className="question">
-                        <h4>{Question.title}</h4>
+            <AnimateSharedLayout>
+                {Questions.map((Question) => (
+                    <Toggle title={Question.title}>
                         <div className="answer">
                             <p>{Question.text1}</p>
                             <p>{Question.text2}</p>
                         </div>
-                    </div>
-                    <div className="faq-line"></div>
-                </>
-            ))}
+                    </Toggle>
+                ))}
+            </AnimateSharedLayout>
         </Styled>
     );
 };

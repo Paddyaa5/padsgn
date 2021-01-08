@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+//import animations
+import { pageAnim, imageAnim } from "../animations/animations";
 //import images
 import LT from "../images/lt.jpg";
 import KM from "../images/km.jpg";
 
-const Styled = styled.div`
+const Styled = styled(motion.div)`
     margin-top: 10vh;
     min-height: 100vh;
     overflow: hidden;
@@ -37,14 +40,14 @@ const Styled = styled.div`
 
 export default function Projects() {
     return (
-        <Styled>
+        <Styled variants={pageAnim} initial="hidden" animate="show" exit="exit">
             <div className="movie">
                 <Link to="/projects/the-kilometre-club">
                     <h2>The Kilometre Club</h2>
                 </Link>
                 <div className="line"></div>
                 <Link to="/projects/the-kilometre-club">
-                    <img src={KM} alt="" />
+                    <motion.img variants={imageAnim} src={KM} alt="" />
                 </Link>
             </div>
             <div className="movie">
@@ -53,7 +56,7 @@ export default function Projects() {
                 </Link>
                 <div className="line"></div>
                 <Link to="/projects/little-tap">
-                    <img src={LT} alt="" />
+                    <motion.img variants={imageAnim} src={LT} alt="" />
                 </Link>
             </div>
         </Styled>

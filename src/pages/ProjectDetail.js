@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
+//import project state
 import { ProjectState } from "../data/projectState";
+//import components
 import ProjectDetailText from "../components/Projects/ProjectDetailText";
+//import animations
+import { pageAnim } from "../animations/animations";
 
-const Styled = styled.div`
+const Styled = styled(motion.div)`
     min-height: 100vh;
     position: relative;
     padding-top: 10vh;
@@ -17,9 +22,8 @@ const Styled = styled.div`
             font-family: ${(props) => props.theme.font2};
         }
         img {
-            margin-top: 2rem;
-            width: 90%;
-            height: calc(90vh - 4rem);
+            width: 100%;
+            height: 90vh;
             object-fit: cover;
             border: 2px solid ${(props) => props.theme.color1};
         }
@@ -50,7 +54,12 @@ const ProjectDetail = () => {
     return (
         <>
             {project && (
-                <Styled>
+                <Styled
+                    variants={pageAnim}
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
+                >
                     <div className="headline">
                         <h2>{project.title}</h2>
                         <img src={project.mainImg} alt={project.title} />
